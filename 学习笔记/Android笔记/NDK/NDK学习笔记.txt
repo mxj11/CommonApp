@@ -1,0 +1,95 @@
+1、几种库：
+.a文件为静态库；.dll文件是在Windows下的动态库；.so文件是在Linux下的动态库。
+
+2、静态库和动态库的区别：
+静态库：程序编译时会被连接到目标代码中，在程序运行时不会被用到。
+动态库：程序编译时不会被连接到目标代码中，在程序运行时会被载入。在内存中可以被多个程序共享使用。
+
+3、JNI开发流程：
+	1）.编写native方法
+	2）.javah命令，生成.h头文件
+	3）.复制.h头文件到CPP工程中
+	4）.复制jni.h和jni_md.h文件到CPP工程中
+	5）.实现.h头文件中声明的函数
+	6）.生成dll文件
+	7）.配置dll文件所在目录到环境变量
+	8）.重启Eclipse
+	
+4、JNIEnv是什么
+在c中，JNIEnv是结构体指针别名，env是二级指针；
+在c++中，JNIEnv是结构体别名，env是一级指针。
+
+5、jclass是什么
+代表native方法所属类的class对象。
+
+6、jobject是什么
+代表native方法所属的对象。
+
+7、JNI数据类型
+byte[] jByteArray
+object[] jobjectArray
+
+8、JNI数据类型和签名关系（c访问java）
+boolean Z
+byte  B
+char  C
+short  S
+int    I
+long   L
+float  F
+double  D
+void    V
+object  Ljava/lang/string(L+完整类型)
+Array   int[]  [I
+
+9、NDK开发流程
+ * 1、编写java层Native方法
+ * 2、javah命令生成头文件
+ * 3、创建jni目录
+ * 4、添加本地支持add native support
+ * 5、实现头文件中定义的函数
+ * 6、编译生成.so动态库
+ * 7、加载动态库
+ 
+ 
+10、ecplise c++ General配置
+ D:\ndk-r7\toolchains\arm-linux-androideabi-4.4.3\prebuilt\windows\lib\gcc\arm-linux-androideabi\4.4.3\include
+ D:\ndk-r7\toolchains\arm-linux-androideabi-4.4.3\prebuilt\windows\lib\gcc\arm-linux-androideabi\4.4.3\include-fixed
+ D:\ndk-r7\platforms\android-14\arch-arm\usr\include
+ 
+11、JNI要点
+1）java层访问C层
+2）C层访问java层
+C层访问java层的方法（静态方法、非静态方法、构造方法、父类方法）、属性（静态属性、非静态属性）
+
+12、指针是变量的内存地址，引用是变量的别名。
+
+13、FFMpeg:  http://www.ffmpeg.org/download.html
+视频播放器原理：
+1)封装格式数据（flv,mkv,mp4...)
+2)解封装格式
+(录像和录音，是一个压缩采集到图像或音频数据的过程，这个过程又称为编码过程)
+(播放视频或者音频文件，实质上是一个解压缩的过程，这个过程又称为解码过程)
+(视频解码->视频像素数据(yuv,rgb)，音频解码->音频采样数据)
+3)音频压缩数据(AAC,MP3算法)
+3.1)音频压缩数据
+3.2)音频解码
+3.3)音频采样数据(pcm)
+4)视频压缩数据(h264,MPEG2算法)
+4.1)视频压缩数据
+4.2)视频解码
+4.3)视频像素数据(yuv,rgb)
+5)音视频同步
+6)播放
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

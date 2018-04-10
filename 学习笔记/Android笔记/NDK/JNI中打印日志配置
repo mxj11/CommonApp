@@ -1,0 +1,11 @@
+JNI开发中打印日志：
+1、在CMakeLists.txt文件中加入:
+Hello：动态库名称 log：日志库
+target_link_libraries(Hello log android)
+
+2、在Hello.c中即你JNI开发的C文件中加入
+#include <android/log.h>
+#define  LOG_TAG    "Hello"
+#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+#define LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+#define LOGD(...)  __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)

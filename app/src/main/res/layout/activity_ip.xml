@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lxz.common.fourth.tcp_ip.IPActivity">
+    <include layout="@layout/titlebar"></include>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/brn_get_local_ip"
+        android:text="获取本机ip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/brn_get_remote_ip"
+        android:layout_width="match_parent"
+        android:text="获取远程ip"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

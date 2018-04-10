@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_xml"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lxz.common.fourth.activity.XMLActivity">
+    <include layout="@layout/titlebar"></include>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_dom4j"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dom4j解析"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_sax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAX解析"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_pull"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pull解析"
+        />
+</LinearLayout>

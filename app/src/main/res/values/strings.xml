@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CommonApp</string>
+    <string name="title_activity_list_view_multi_holder">ListViewMultiHolderActivity</string>
+    <string name="title_activity_ip">IPActivity</string>
+    <string name="title_activity_coordinator_layout">CoordinatorLayoutActivity</string>
+</resources>

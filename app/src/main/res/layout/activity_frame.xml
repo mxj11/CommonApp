@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lxz.common.second.frame.activity.FrameActivity">
+    <include layout="@layout/titlebar"></include>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_factory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="工厂模式"
+                />
+            <Button
+                android:id="@+id/btn_signl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="单例模式"
+                />
+            <Button
+                android:id="@+id/btn_mvp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MVP模式"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

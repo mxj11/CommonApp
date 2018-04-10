@@ -1,0 +1,133 @@
+C++学习笔记：
+#include "iostream" //包含头文件，因为代码中使用到cout<<"hello"<<endl;
+using namespace std;//使用标准命名空间，在这个空间中定义了很多标准定义。
+
+区别与C语言的包含头文件
+#include <stdio.h>;
+
+VS和VC的区别
+VS：Visual Studio，是Microsoft提供的一个工具集，可以支持C/C++、VB、JAVA、C#
+VC：Visual C++，是独立的C/C++的开发工具。
+
+C#、C、C++的区别：
+C语言是面向过程的一门编程语言，而C++是建立在C语言的基础上，支持面向对象，扩展了类型、函数、异常功能的一门编程语言。C#是由C/C++衍生出来的面向对象的编程语言，继承了C/C++强大功能的同时去掉一些复杂的特性，综合了VB的简单可视化操作和C++的高运行效率，使之成为.NET的首选开发语言。
+
+C++基本数据类型
+bool布尔型：bool flag=false;
+
+C++中的类：
+class CAppUpgrade:CAppBase
+:表示CAppUpgrade继承CAppBase
+CAppUpgrade(DWORD pHwnd):CAppBase(pHwnd)
+:表示：构造函数后面的冒号起分割作用，是类给成员变量赋值的方法，初始化列表
+
+class A{
+	public:
+		void print(){
+		cout<<"这是类A"<<endl;
+	}
+
+}
+main(){
+	A a;//创建对象
+	a.print();
+	return 0;
+
+
+}
+
+
+    在类内部，无论成员变量或成员函数被声明为private、public或者protected属性，均是可以互相访问的，无访问权限限制。
+    在类外，通过对象无法访问private和protected属性的成员变量和成员函数，而仅可以访问public属性的成员变量和成员函数。
+
+在C++中，struct与class基本是通用的，唯一不同的是如果使用class关键字，类中定义的成员变量或成员函数默认都是private属性的，而采用struct关键字，结构体中定义的成员变量或成员函数默认都是public属性的。
+
+最好不要采用传值的方式传递和返回对象，这是因为采用传值的方式传递和返回对象的过程中需要经历对象间的拷贝操作，这样会在一定程度上降低程序运行的效率，从而使得待处理数据量增大，增加内存的使用。而采用引用或指针的方式则不会有这样的问题，而实际上，因为引用表达更加简练直观，因此也较少使用指针来传递对象或作为函数返回值。
+如：
+    class book
+    {
+        ... ...
+    };
+    book Alice;
+    book &Alice_reference = Alice;
+
+先定义了book类，之后定义了book类对象Alice，最后一句定义了Alice_reference是Alice对象的引用。
+
+
+构造函数：
+构造函数与普通成员函数类似，可以在类内部定义，也可以在类外部定义。第一个没有参数的构造函数book()，其定义就在类内部；第二个构造函数book(char * a, double p)在类内部声明，类外部定义。
+
+book::book(char *a, double p):title(a),price(p){}构造函数
+本例在定义带参构造函数book(char *a, double p)时，不再是在函数体中一一赋值进行初始化，其函数体为空。在函数首部与函数体之间增添了一个冒并加上title(a),price(p)语句，这个语句的意思相当于函数体内部的 title = a; price = p; 语句。这样做对于两个成员变量的类来说看不出什么优势，但是一旦当成员变量非常多的时候，通过参数初始化列表进行初始化其优势便可以显现出来了，如此写法简洁明了。
+
+转型构造函数：
+    class student
+    {
+    public:
+        student(){}
+        explicit student(char * n){name = n;}
+    private :
+        char * name;
+    }
+
+加上explicit关键字，不能将字符串类型转为student对象类型
+没有explicit关键字，编译器会自动调用转型构造函数将name转换为student类的对象
+
+
+拷贝构造函数：
+    book(book &b);
+    book(const book &b);
+拷贝构造函数的参数一定要是对象的引用
+
+析构函数：
+在对象需要被销毁的时候同样系统会自动调用一个函数，这个函数被称之为析构函数。析构函数就是用于回收创建对象时所消耗的各种资源。
+特点：
+    无返回值
+    没有参数，不能被重载，因此一个类也只能含有一个析构函数
+    函数名必须为“~类名”的形式，符号“~”与类名之间可以有空格
+
+常量指针this
+this指针只非static成员函数中才是有效的
+
+new和delete操作符
+malloc函数具有分配存储空间的功能，但是这些函数除了分配存储空间外，不会调用类的构造函数。而C++语言提供的new和new[]操作符则不会如此，使用它们为对象分配存储空间的同时，它们也会调用相应的构造函数。
+操作符delete和delete[]在释放对象存储空间的同时也会调用析构函数，而free函数则不会调用析构函数。
+
+
+const对象：
+const对象定义的基本语法如下：
+const 类名 对象名(实参名);
+类名 const 对象名(实参名);
+这两种定义方式都是可以的，我们一旦将对象定义为常对象之后，该对象就只能调用类中的常成员函数了。
+
+友元函数、友元类
+
+继承：
+使用using声明可以改变基类成员在派生类中的访问属性。
+    int main()
+    {
+        codingbook think;
+        think.setlang(cpp);
+        think.settitle("Thinking in C++");
+        think.setprice(78.9);  //compile error
+//setprice在派生类中使用using声明，使其在基类中的访问熟悉并未私有的，所以这边不能直接访问。
+        return 0;
+    }
+当我们创建一个派生类对象的时候，基类构造函数将会被自动调用，用于初始化派生类从基类中继承过来的成员变量。而派生类中新增的成员变量则需要重新定义构造函数用于初始化了。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

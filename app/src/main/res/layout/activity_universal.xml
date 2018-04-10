@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_universal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/titlebar"></include>
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#11000000"
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/bottom_tag_style"
+            android:text="第一页"
+            android:drawableTop="@drawable/selector_rb_common_frame_drawable"
+            />
+        <RadioButton
+            android:id="@+id/rb_second"
+            style="@style/bottom_tag_style"
+            android:text="第二页"
+            android:drawableTop="@drawable/selector_rb_thirdparty_drawable"
+            />
+        <RadioButton
+            android:id="@+id/rb_third"
+            style="@style/bottom_tag_style"
+            android:text="第三页"
+            android:drawableTop="@drawable/selector_rb_custom_drawable"
+            />
+        <RadioButton
+            android:id="@+id/rb_fourth"
+            style="@style/bottom_tag_style"
+            android:text="第四页"
+            android:drawableTop="@drawable/selector_rb_other_drawable"
+            />
+
+    </RadioGroup>
+
+</RelativeLayout>

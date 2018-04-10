@@ -1,0 +1,12 @@
+1、启动ssh服务：sudo service ssh start 
+2、重启ssh服务：sudo service ssh restart
+3、安装ssh服务：sudo apt-get install ssh-server
+4、安装ssh客户端：sudo apt-get install ssh-client
+5、编辑/etc/ssh/sshd_config文件：vim /etc/ssh/sshd_config
+6、安装vim：sudo apt-get install vim-gtk
+7、更新安装包：sudo apt-get update
+9、打包压缩：tar -zcf xxx.tar.gz xxx(打包文件名称)
+10、解压缩：tar -zxf xxx.tar.gz   (jxvf)
+11、给权限：chmod 777 -R 目录名称
+
+

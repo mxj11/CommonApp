@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_annotation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lxz.common.fourth.activity.AnnotationActivity">
+    <include layout="@layout/titlebar"></include>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义注解的基本写法"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_default_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="带默认值的注解"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_default_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="带默认名称的注解"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_meta_annotation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="元注解"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_annotation_reflect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注解反射"
+        />
+</LinearLayout>

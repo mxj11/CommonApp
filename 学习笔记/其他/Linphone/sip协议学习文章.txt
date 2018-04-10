@@ -1,0 +1,3 @@
+sip协议呼叫流程详解 - DaveBobo的博客 - 博客频道 - CSDN.NET
+http://blog.csdn.net/DaveBobo/article/details/52007609?locationNum=2&fps=1
+http://www.linphone.org/technical-corner/linphone/documentation

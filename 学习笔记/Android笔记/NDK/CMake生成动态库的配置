@@ -1,0 +1,29 @@
+1、建项目的时候选择Include c++ support
+2、项目已经建好，没有选择Include c++ support，则需要以下步骤配置:
+第一:
+在app下的build.gradle文件中：
+defaultConfig {
+    externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+}
+
+android{
+    externalNativeBuild {
+            cmake {
+                path "CMakeLists.txt"
+            }
+        }
+}
+第二:
+在app目录下，添加CMakeLists.txt配置文件。
+
+CMakeLists.txt中参数详解：
+1、cmake的最低版本要求
+cmake_minimum_required(VERSION 3.4.1)
+2、动态名称 SHARED C或C++文件所在位置
+add_library(Hello SHARED src/main/jni/Hello.c)
+3、把所依赖的库链接进来
+target_link_libraries(Hello log android)

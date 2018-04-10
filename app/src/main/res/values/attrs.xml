@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--1、定义Custom01标题文本，文本颜色，文本大小-->
+    <attr name="titleText" format="string"></attr>
+    <attr name="titleTextColor" format="color"></attr>
+    <attr name="titleTextSize" format="dimension"></attr>
+
+    <declare-styleable name="titleStytle">
+        <attr name="titleText" ></attr>
+        <attr name="titleTextColor" ></attr>
+        <attr name="titleTextSize" ></attr>
+    </declare-styleable>
+    
+    <!--2、定义CustomImageView属性-->
+    <attr name="image" format="reference"></attr>
+    <attr name="imageScaleType" >
+        <enum name="fitxy" value="0"></enum>
+        <enum name="center" value="1"></enum>
+    </attr>
+
+    <declare-styleable name="customImageView">
+        <attr name="titleText"></attr>
+        <attr name="titleTextColor"></attr>
+        <attr name="titleTextSize"></attr>
+        <attr name="image"></attr>
+        <attr name="imageScaleType"></attr>
+    </declare-styleable>
+    
+    <!--3、自定义进度条-->
+    <attr name="firstColor" format="color"></attr>
+    <attr name="secondColor" format="color"></attr>
+    <attr name="circleWidth" format="dimension"></attr>
+    <attr name="speed" format="integer"></attr>
+
+    <declare-styleable name="CustomProgressBar">
+        <attr name="firstColor"></attr>
+        <attr name="secondColor"></attr>
+        <attr name="circleWidth"></attr>
+        <attr name="speed"></attr>
+    </declare-styleable>
+
+
+   <!-- <attr name="firstColor" format="color" />
+    <attr name="secondColor" format="color" />
+    <attr name="circleWidth" format="dimension" />-->
+    <attr name="dotCount" format="integer" />
+    <attr name="splitSize" format="integer" />
+    <attr name="bg" format="reference"></attr>
+
+    <declare-styleable name="CustomVolumControlBar">
+        <attr name="firstColor" />
+        <attr name="secondColor" />
+        <attr name="circleWidth" />
+        <attr name="dotCount" />
+        <attr name="splitSize" />
+        <attr name="bg" />
+    </declare-styleable>
+
+
+</resources>

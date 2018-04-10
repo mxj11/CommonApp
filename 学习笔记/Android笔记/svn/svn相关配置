@@ -1,0 +1,9 @@
+第一种方式：
+右键AS项目->右键checked out->右键add->右键选择要忽略的文件->右键整个项目commit->完成。
+第二种方式：
+右键AS项目->选tortoiseSVN->import->填上选择的路径->项目导入svn服务器成功->重新checkout一份出来
+->再选择要忽略的文件并删除
+
+博客：
+Android Studio SVN 使用方法 - CSDN博客
+http://blog.csdn.net/Android_Study_OK/article/details/51387677

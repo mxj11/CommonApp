@@ -1,0 +1,44 @@
+sip协议：
+一、sip默认使用udp 5060端口，也可以使用TCP 5060端口。
+二、sip使用Server-Client模型
+三、sip的四项基本功能：定位用户，将sip地址解析为ip地址；协商
+	session的feature和capability；在进行呼叫时改变会话参数；
+	负责会话的建立和中断。
+四、sip地址形式：
+	sip:1112223344@mycompany.com或者
+	sip:1112223344@10.1.1.1
+五、presence概念：用户可为自己设置offline、busy等状态。
+六、sip组件：
+	User Agent，Proxy Server，Redirect Server，Registrar Server，
+	Location Server，Back-to-back user agent，Presence Server
+七、呼叫流程：
+	UAC发起呼叫会把call setup message发给proxy Server，如果Proxy
+	Server知道UAS的位置，会把call setup message转发给UAS，否则会
+	找其他的server查询。UAS接收到call setup message后会给Proxy
+	Server响应，Proxy Server再把这个响应返回给UAC。当呼叫建立之后
+	Proxy Server有两种选择：第一、呼叫建立之后还处于UAC和UAS之间的
+	signaling path之间，以监视call change message或call termination
+	message。第二、退出UAC和UAS之间的signaling path，不再参与会话。
+八、sip Messages
+1、REGISTER：UAC使用此message向server注册以表明自己的位置。
+2、INVITE：UAC发送此信息用以邀请UAS加入会话
+3、ACK:为INVITE回复一个确认消息
+4、CANCEL:用来终止一个还没建立（在建立过程中）的呼叫。
+5、OPTION:用来查询server的capability。
+6、BYE:用来中断呼叫
+7、INFO*：当message body中包含数据时，使用INFO message
+8、PRACK*：用于回复一个临时性的请求
+9、REFER*：使用这个REFER指向另一个电话，从而完成call transfer
+10、SUBSCRIBE*：告诉sever一旦发生特定事件，愿意接收一个通知
+11、NOTIFY*：用来通知subscriber发生了特定的时间，也可用于传送DTMF
+12、UPDATE*：在接到初始INVITE的回复时，UAC用UPDATE修改一个呼叫参数。
+带*六种只被动接收，而不会自动产生。
+
+
+
+	
+	
+	
+	
+	
+	

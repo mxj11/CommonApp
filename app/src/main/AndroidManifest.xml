@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lxz.common">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 在SDCard中创建与删除文件的权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".app.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 友盟多渠道打包配置 -->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".home.okhttp.activity.OkhttpActivity" />
+        <activity android:name=".home.json.activity.JsonActivity" />
+        <activity android:name=".home.okhttp.activity.OkhttpRawActivity" />
+        <activity android:name=".home.okhttp.activity.OkhttpUtilsJeasonActivity" />
+        <activity android:name=".home.okhttp.activity.OkhttpUtilsHYActivity" />
+        <activity android:name=".home.afinal.activity.AfinalActivity" />
+        <activity android:name=".home.banner.activity.BannerActivity" />
+        <activity android:name=".home.butterknife.activity.ButterKnifeActivity" />
+        <activity android:name=".home.countdownview.activity.CountDownViewActivity" />
+        <activity android:name=".home.eventbus.activity.EventBusActivity" />
+        <activity android:name=".home.fresco.activity.FrescoActivity" />
+        <activity android:name=".home.glide.activity.GlideActivity" />
+        <activity android:name=".home.imageloader.activity.ImageLoaderActivity" />
+        <activity android:name=".home.opendanmaku.activity.OpenDanmakuActivity" />
+        <activity android:name=".home.picasso.activity.PicassoActivity" />
+        <activity android:name=".home.pulltorefresh.activity.PullToRefreshActivity" />
+        <activity android:name=".home.recycleview.activity.RecycleViewActivity" />
+        <activity android:name=".home.universalvideoview.activity.UniversalVideoViewActivity" />
+        <activity android:name=".home.volley.activity.VolleyActivity" />
+        <activity android:name=".home.xutils.activity.Xutils3Activity" />
+        <activity android:name=".home.json.jsonraw.JsonRawActivity" />
+        <activity android:name=".home.json.gson.GsonActivity" />
+        <activity android:name=".home.json.fastjson.FastjsonActivity" />
+        <activity android:name=".home.xutils.activity.MyFragmentActivity" />
+        <activity android:name=".home.xutils.activity.Xutils3NetActivity" />
+        <activity android:name=".home.eventbus.activity.SecondEventBusActivity" />
+        <activity android:name=".home.imageloader.activity.ImageloaderListviewActivity" />
+        <activity android:name=".home.imageloader.activity.ImageloaderGridviewActivity" />
+        <activity android:name=".home.imageloader.activity.ImageloaderViewpagerActivity" />
+        <activity android:name=".home.picasso.activity.PicassoListviewActivity" />
+        <activity android:name=".home.picasso.activity.PicassoTransfromationsActivity" />
+        <activity android:name=".home.glide.activity.GlideBaseActivity" />
+        <activity android:name=".home.glide.activity.GlideRecyclerviewActivity" />
+        <activity android:name=".home.glide.activity.GlideTranformationsActivity" />
+        <activity android:name=".home.fresco.activity.FrescoLoadImageWithProgress" />
+        <activity android:name=".home.fresco.activity.FrescoResizeActivity" />
+        <activity android:name=".home.fresco.activity.FrescoCropActivity" />
+        <activity android:name=".home.fresco.activity.FrescoCircleAndCornerActivity" />
+        <activity android:name=".home.jiecaovideoplayer.activity.ListViewActivity" />
+        <activity android:name=".home.jiecaovideoplayer.activity.UISmallChangeActivity" />
+        <activity android:name=".home.jiecaovideoplayer.activity.WebViewActivity" />
+        <activity
+            android:name=".home.jiecaovideoplayer.activity.JieCaoVideoPlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/JieCaoVideoPlayerTheme" />
+        <activity
+            android:name=".home.jiecaovideoplayer.activity.ListViewNormalActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.jiecaovideoplayer.activity.ListViewViewpagerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.jiecaovideoplayer.activity.ListViewMultiHolderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.jiecaovideoplayer.activity.RecyclerViewNormalActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity android:name=".home.banner.activity.BannerAnimationActivity" />
+        <activity android:name=".home.banner.activity.BannerStyleActivity" />
+        <activity android:name=".home.banner.activity.IndicatorPositionActivity" />
+        <activity android:name=".home.banner.activity.CustomBannerActivity" />
+        <activity android:name=".home.countdownview.activity.DynamicShowActivity" />
+        <activity android:name=".home.countdownview.activity.CountdownViewListViewActivity" />
+        <activity android:name=".home.countdownview.activity.CountdownViewRecyclerViewActivity" />
+        <activity android:name=".home.pulltorefresh.activity.PullToRefreshListActivity" />
+        <activity android:name=".home.pulltorefresh.activity.PullToRefreshGridActivity" />
+        <activity android:name=".home.pulltorefresh.activity.PullToRefreshListFragmentActivity" />
+        <activity android:name=".home.pulltorefresh.activity.PullToRefreshViewPagerActivity" />
+        <activity android:name=".home.pulltorefresh.activity.PullToRefreshListInViewPagerActivity" />
+        <activity android:name=".home.pulltorefresh.activity.PullToRefreshWebViewActivity" />
+        <activity android:name=".home.tablayoutandviewpager.Activity.TabLayoutMainActivity" />
+        <activity android:name=".second.h5.activity.AndroidAndH5Activity" />
+        <activity android:name=".second.h5.activity.JavaAndJSActivity" />
+        <activity android:name=".second.customview.activity.CustomViewActivity" />
+        <activity android:name=".second.customview.activity.MyCustomActivity" />
+        <activity android:name=".second.ndk.activity.NDKActivity" />
+        <activity android:name=".second.frame.activity.FrameActivity" />
+        <activity android:name=".second.datastructure.activity.DataStructureAndAlgorithmsActivity" />
+        <activity android:name=".second.performance.activity.PerformanceOptimizationActivity" />
+        <activity android:name=".third.commontools.activity.ConmonToolsActivity" />
+        <activity android:name=".second.frame.mvp.activity.MVPActivity" />
+        <activity android:name=".fourth.activity.XMLActivity" />
+        <activity android:name=".fourth.activity.ReflectActivity" />
+        <activity android:name=".fourth.activity.AnnotationActivity" />
+        <activity android:name=".second.h5.activity.JsCallVideoActivity" />
+        <activity android:name=".second.h5.activity.JsCallToCallPhoneActivity" />
+        <activity android:name=".second.multichannel.MultiChannelPackingActivity" />
+        <activity android:name=".fourth.http.HTTPActivity" />
+        <activity android:name=".fourth.tcp_ip.TCPAndIPActivity" />
+        <activity android:name=".fourth.udp.UDPActivity" />
+        <activity android:name=".fourth.netmodel.NetModelActivity" />
+        <activity
+            android:name=".fourth.tcp_ip.IPActivity"
+            android:label="@string/title_activity_ip"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".fourth.tcp_ip.TCPActivity" />
+        <activity android:name=".fourth.udp.UDPChatActvity" />
+        <activity android:name=".fourth.tcp_ip.CSVistorActivity" />
+        <activity android:name=".fourth.tcp_ip.ServerTextConvertorActivity" />
+        <activity android:name=".fourth.tcp_ip.UploadTextActivity" />
+        <activity android:name=".fourth.tcp_ip.UploadImgActivity" />
+        <activity android:name=".fourth.tcp_ip.ConcurrenceUploadImgActivity" />
+        <activity android:name=".fourth.tcp_ip.ConcurrenceLoginActivity" />
+        <activity
+            android:name=".home.coordinatorLayout.CoordinatorLayoutActivity"
+            android:label="@string/title_activity_coordinator_layout"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".home.snackbar.SnackbarActivity" />
+        <activity android:name=".third.universalfragment.activity.UniversalActivity" />
+        <activity android:name=".second.customview.activity.EventActivity" />
+        <activity android:name=".second.customview.activity.SLActivity"></activity>
+    </application>
+
+</manifest>

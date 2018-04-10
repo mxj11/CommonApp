@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_udpchat_actvity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lxz.common.fourth.udp.UDPChatActvity">
+    <include layout="@layout/titlebar" android:id="@+id/title_bar"></include>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_chat"
+        android:layout_below="@+id/title_bar"
+        android:layout_above="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:background="#fff"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+       <EditText
+           android:id="@+id/et_text"
+           android:layout_toLeftOf="@+id/btn_send"
+           android:layout_width="match_parent"
+           android:padding="3dp"
+           android:layout_height="50dp"></EditText>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_send"
+            android:text="发送"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+</RelativeLayout>

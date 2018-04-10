@@ -1,0 +1,250 @@
+Unix与Linux类似父子关系。
+Linux内核下载网站：https://www.kernel.org/
+Linux是由李纳斯团队负责维护
+Linux的应用：
+1、基于Linux的企业服务器
+2、嵌入式应用
+3、Linux在电影娱乐业的应用
+查找服务器操作系统： www.netcraft.com
+Linux的分区：
+主分区、扩展分区、逻辑分区，逻辑分区是在拓展分区中，。
+数字1,2,3,4这四个只能给主分区和扩展分区设备命名，逻辑分区设备命名从5开始。
+分区的步骤：
+分区：把大硬盘分为小的逻辑分区
+格式化：写入文件系统
+分区设备文件名：给每个分区定义设备文件名
+挂载：给每个分区分配挂载点
+
+Linux常用命令（文件处理命令、权限管理命令、文件搜索命令）
+
+一、	文件处理命令
+1、	文件处理命令
+命令格式与目录处理命令ls
+命令格式：
+命令［－选项］［参数］:中括号表示不是必须的
+ls  –la  /etc
+简化选项和完整选项：-a  --all
+-------------------------------------------------------------------------------------
+目录处理命令：ls
+Linux中把用户分为三种：
+第一、	u所有者
+第二、	g所属组
+第三、	o其他
+用户对文件的操作权限：
+u		g		o
+rw-		r--		r--
+
+ls -a:查看当前目录所有文件，包括隐藏文件
+ls -l:查看文件的详细信息
+ls -lh:人性化查看详细信息
+-表示文件、d表示目录、l表示软连接
+文件信息（七个方面）
+用量、权限、技术引用、用户所有者、所属组、修改时间、文件名称
+---------------------------------------------------------------------------------------------------------
+https://item.taobao.com/item.htm?spm=a230r.1.14.119.xXxZD5&id=528952792016&ns=1&abbucket=4#detail
+
+
+创建目录命令：
+mkdir
+mkdir –p 递归创建目录
+
+复制目录命令：
+cp 
+cp –r:复制目录
+cp –p:复制目录，并保存原有目录的属性
+
+目录处理命令：
+cd ..:切换到上一级目录
+cd .:切换到当前目录
+cd /tmp:切换到tmp目录
+pwd:获取当前目录的觉得路径
+
+删除目录：
+rmdir:删除空目录
+
+剪切目录、改名
+mv 
+mv /tmp/movices/xiasigui /tmp/musice/guixiaren
+
+删除文件
+rm
+rm –r[删除目录或文件]
+rm-f
+
+Android中Linux命令
+su:切换到超级用户
+#代表当前时root用户，$:代表当前用户是普通用户
+
+rm：删除文件
+格式：rm 文件名.后缀名
+
+cat:以文本形式输出文件内容（查看内容少的）
+cat –n 表示输出带有行号的文件内容
+
+more:分页显示文本内容
+空格显示下一页
+q表示退出
+回车表示换行
+
+less:具有more的功能，还可以向上翻页，查找功能
+向上翻页：按pageup  搜索：输入：/关键词  往下查找：按n（next）
+head:显示文件前面几行。如果没有指定多少行，默认是十行
+head –n 7 /tmp/etc/services 显示services前面七行，
+
+tail:显示文件的后面几行。如果没有指定多少行，默认是十行
+tail–n 7 /tmp/etc/services 显示services后面3行
+tail –f 动态显示文件末尾内容：一般用于监控日志
+
+mv:移动，并可以重命名
+
+touch：创建文件名
+创建一个带空格的文件
+Touch “program files”
+创建两个文件，一个是program，一个是files
+touch program files
+chmod：修改文件访问权限
+格式：chmod 777 文件名
+echo:重定向内容
+echo 文本内容 > 文件名：把指定内容重定向到文件中
+cat 文件名 > 文件名：把指定文件的内容重定向到指定文件中
+sleep:睡眠，参数是秒
+df:罗列出几个目录的空间信息
+id:罗列出当前用户的用户id和所在群组的id
+
+ln：
+软连接:类似windows中的快捷方式，任何用户都可以对它进行操作
+特点：
+权限：lrwxrwxrwx
+文件大小：只是符号链接
+/tmp/issue.sofr->/etc/issue
+箭头指向源文件
+ln –s 要做链接的文件名称 要生成链接的文件名称
+ln –s /etc/issue /etc/issue.soft
+硬链接
+特点：
+拷贝+同步更新
+通过i节点识别：
+不能跨分区
+不能针对目录使用
+
+二、权限管理命令（chmod、chgrp、chown）
+Chmod：changemode
+更改文件的权限：只有两种，一是root，二是所有者
+第一种修改方式：Chmod u+w,g-x,0+r  tonghua
+第二种修改方式：权限用数字表示
+Chmod 777 文件名
+r---4
+w---2
+x---1
+rwxrw-r--
+7  6  4
+Chmod –R 递归改变权限，可以改变一个目录权限的同时，改变该目录下的所有文件
+权限	权限类型		文件				  目录
+r        读权限		可以查看文件内容	可以列出目录中的内容
+w		  写权限    可以修改文件内容	可以在目录中创建、删除文件
+x		 执行权限   可以执行文件		可以进入目录
+
+chown:改变所有者
+chown liuxiangzhao hehe改变hehe文件的所有者为liuxiangzhao
+useradd liuxiangzhao 添加所有者
+groupadd liubrother  添加所属组
+
+chgrp:改变所属组
+chgrp liubrother hehe
+
+三、文件搜索命令
+find[搜索范围][匹配条件]
+find /etc –name init搜索init的文件
+find /etc –name “init” 搜索包含init的文件
+find /etc –name init??? 精确查找
+-iname不区分大小写
+-size 大小
+find / -size +1024查找大于0.5kb的文件
+在Linux中数据存储的最小单元是数据块，1数据块=512字节，1kb=2个数据块
+find /etc –name init* -a -type d 查找以init开头的文件，并且类型为目录的
+find /etc –name init* -a -type f 查找以init开头的文件，并且类型为文件的
+find /etc –name inittab –exec ls –l {} \;对搜索结果执行操作
+
+locate 
+locate 文件名
+刚刚创建的文件，使用locate查找时，必须先updatedb，再查找才能找到。
+Locate –i表示不区分大小写查找
+
+
+
+
+Vim简介：命令模式、插入模式、编辑模式
+
+全屏幕文本编辑器，它的作用是建立、编辑、显示文本文件
+插入模式
+a:在光标所在字符后插入
+A：在光标所在行尾插入
+i:在光标所在的字符前插入
+I：在光标所在行行首插入
+o:在光标下插入新行
+O：在光标上插入新行
+编辑模式：
+：set nu设置行号
+：wq 保存退出
+
+定位命令：
+:set nu设置行号
+:set nonu 取消行号
+:gg 到第一行
+:G到最后一行
+nG 到第n行
+:n 到第n行
+$移至行尾
+0、移至行首
+
+远程登陆管理工具：SecureCRT
+没有网线连接：
+Network adapter要设置为hostonly
+查看网卡的虚拟ip地址：
+Hostonly对应的是VMNet1
+Net对应的是VMNet8
+给虚拟的Linux设置ip地址，必须与VMNet1为同一个段
+设置命令如下：
+ifconfig eth0 ip地址
+在dos命令下ping一下刚设置的ip地址，如果有数据包返回，则设置成功。
+再通过远程登陆管理工具CRT来连接
+
+有网线连接：
+Network adapter要设置为桥接：表示连接的是真实网卡，设置的ip网段必须与Windows下的ip网段一致。
+
+通过远程管理工具可以管理Linux系统的简单步骤：
+1为虚拟系统设置一个ip地址。
+2使用CRT通过连接虚拟系统的ip地址，与虚拟系统建立连接。
+
+细节：
+1在sessionsetting设置中对字体设为宋体，并选择GBK
+2使用utf-8来编码
+
+Linux系统中，挂载是指：
+将一个设备（通常是存储设备）挂接到一个已存在的目录上，我们要访问存储设备中的文件，必须将文件所在的分区挂载到一个已存在的目录上，然后通过访问这个目录来访问存储设备。
+C中的箭头和点
+控件初始化：
+CDPProgress* m_progress;
+m_progress = (CDPProgress*)GetCtrlByName(L"upgrade");
+挂载：
+/ # ifconfig eth0 192.168.0.120 netmask 255.255.255.0
+
+挂载命令：
+mount:列出所有挂载设备
+mount –a:依据配置文件的内容，自动挂载
+
+挂载光盘：
+光盘的设备名称：固定在/dev/cdrom或dev/sr0
+建立挂载点：mkdir/mnt/cdrom
+挂载光盘：mount /dev/cdrom  /mnt/cdrom
+把dev下的cdrom挂载到mnt下的cdrom
+：umount /dev/sr0
+
+C与c++的关系
+C++是以C语言为基础，支持面向对象，扩展了类型、函数、异常处理。
+ 
+
+
+
+
+

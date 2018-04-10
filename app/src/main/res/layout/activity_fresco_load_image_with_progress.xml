@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_fresco_load_image_with_progress"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lxz.common.home.fresco.activity.FrescoLoadImageWithProgress">
+    <include layout="@layout/titlebar"></include>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_fresco_spimg"
+        android:layout_width="130dp"
+        android:layout_gravity="center"
+        android:layout_height="130dp"
+        fresco:placeholderImage="@drawable/logo" />
+</LinearLayout>

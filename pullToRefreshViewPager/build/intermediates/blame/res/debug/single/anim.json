@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\ASSpace\\CommonApp\\pullToRefreshViewPager\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_bottom.xml",
+        "source": "D:\\ASSpace\\CommonApp\\pullToRefreshViewPager\\build\\intermediates\\exploded-aar\\CommonApp\\PullToRefresh_library\\unspecified\\res\\anim\\slide_out_to_bottom.xml"
+    },
+    {
+        "merged": "D:\\ASSpace\\CommonApp\\pullToRefreshViewPager\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_bottom.xml",
+        "source": "D:\\ASSpace\\CommonApp\\pullToRefreshViewPager\\build\\intermediates\\exploded-aar\\CommonApp\\PullToRefresh_library\\unspecified\\res\\anim\\slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\ASSpace\\CommonApp\\pullToRefreshViewPager\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_top.xml",
+        "source": "D:\\ASSpace\\CommonApp\\pullToRefreshViewPager\\build\\intermediates\\exploded-aar\\CommonApp\\PullToRefresh_library\\unspecified\\res\\anim\\slide_out_to_top.xml"
+    },
+    {
+        "merged": "D:\\ASSpace\\CommonApp\\pullToRefreshViewPager\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_top.xml",
+        "source": "D:\\ASSpace\\CommonApp\\pullToRefreshViewPager\\build\\intermediates\\exploded-aar\\CommonApp\\PullToRefresh_library\\unspecified\\res\\anim\\slide_in_from_top.xml"
+    }
+]

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_multi_channel_packing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lxz.common.second.multichannel.MultiChannelPackingActivity">
+    <include layout="@layout/titlebar"></include>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_umeng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="友盟多渠道打包"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_meituan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="美团多渠道打包"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_360"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="360多渠道打包"
+        />
+
+</LinearLayout>

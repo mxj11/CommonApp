@@ -1,0 +1,189 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.lxz.common"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //使用CMake生成动态库的配置
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+    }
+    //友盟多渠道打包配置
+    //方式一：
+//    productFlavors{
+//        wandoujia{
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+//        }
+//        xiaomi{
+//            manifestPlaceholders=[UMENG_CHANNEL_VALUE: "xiaomi"]
+//        }
+//
+//        yingyongbao{
+//            manifestPlaceholders=[UMENG_CHANNEL_VALUE: "yingyongbao"]
+//        }
+//
+//    }
+
+    //优化1：
+//    productFlavors{
+//        wandoujia{
+//            //manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+//        }
+//        xiaomi{
+//            //manifestPlaceholders=[UMENG_CHANNEL_VALUE: "xiaomi"]
+//        }
+//    }
+//    productFlavors.all { flavor ->
+//        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+//    }
+
+    //优化2：
+    productFlavors{//需要打包哪个渠道在这里定义即可
+        wandoujia{
+            //manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+        }
+        xiaomi{
+            //manifestPlaceholders=[UMENG_CHANNEL_VALUE: "xiaomi"]
+        }
+    }
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = outputFile.name.replace(".apk", "-${defaultConfig.versionName}.apk")
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //使用CMake生成动态库的配置
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+        }
+    }
+    dependencies {
+        compile fileTree(include: ['*.jar'], dir: 'libs')
+        androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+            exclude group: 'com.android.support', module: 'support-annotations'
+        })
+
+
+        compile 'com.android.support:appcompat-v7:25.3.1'
+        compile 'com.android.support:support-v4:25.3.1'
+        testCompile 'junit:junit:4.12'
+        //recyclerview
+        compile 'com.android.support:recyclerview-v7:25.3.1'
+        //TabLayout
+        compile 'com.android.support:design:25.3.1'
+
+        // volley jar包
+        compile files('libs/volley.jar')
+
+        //Afinal jar包
+        compile files('libs/afinal_0.5.1_bin.jar')
+
+        //ImageLoader jar包
+        compile files('libs/universal-image-loader-1.9.5.jar')
+
+        // dom4j jar包
+        compile files('libs/dom4j-1.6.1.jar')
+
+
+        // https://github.com/JakeWharton/butterknife
+        compile 'com.jakewharton:butterknife:7.0.1'
+
+        //原生 https://github.com/square/okhttp
+        compile 'com.squareup.okhttp3:okhttp:3.8.1'
+
+        //hy https://github.com/hongyangAndroid/okhttputils
+        compile 'com.zhy:okhttputils:2.6.2'
+
+        //jeasonlzy https://github.com/jeasonlzy/okhttp-OkGo
+        compile 'com.lzy.net:okgo:3.0.4'
+
+        // https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.1
+        compile 'com.google.code.gson:gson:2.8.1'
+
+        // https://github.com/Alibaba/fastjson/wiki/%E9%A6%96%E9%A1%B5
+        compile 'com.alibaba:fastjson:1.2.36'
+
+        // https://github.com/wyouflf/xUtils3
+        compile 'org.xutils:xutils:3.5.0'
+
+        // https://github.com/greenrobot/EventBus
+        compile 'org.greenrobot:eventbus:3.0.0'
+
+        // https://github.com/square/picasso
+        compile 'com.squareup.picasso:picasso:2.5.2'
+        compile 'jp.wasabeef:picasso-transformations:2.1.0'
+        compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+
+        //图片变换库
+        //glide https://github.com/bumptech/glide
+        //compile 'com.github.bumptech.glide:glide:4.0.0'
+        compile 'com.github.bumptech.glide:glide:3.7.0'
+        compile 'jp.wasabeef:glide-transformations:2.0.1'
+        annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+
+        // https://github.com/facebook/fresco
+        // 官方提供使用Fresco文档 https://www.fresco-cn.org/docs/index.html
+        compile 'com.facebook.fresco:fresco:1.5.0'
+        // https://github.com/lipangit/JieCaoVideoPlayer
+        compile 'fm.jiecao:jiecaovideoplayer:5.8.1'
+
+
+
+        //弹幕
+        compile project(':opendanmaku')
+
+        //banner轮播图
+        compile 'com.youth.banner:banner:1.4.9'
+
+        //奔溃重启框架
+        compile 'com.zxy.android:recovery:0.0.8'
+
+        //倒计时
+        compile 'com.github.iwgang:countdownview:2.1.6'
+
+        compile 'com.github.iwgang:familiarrecyclerview:1.3.0'
+
+        //PullToRefresh
+        compile project(':PullToRefresh_library')
+        compile project(':pullToRefreshListFragment')
+        compile project(':pullToRefreshViewPager')
+
+        //smartrefresh
+        compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+        compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'//没有使用特殊Header，可以不加这行
+        //顶部显示snackbar
+        compile 'com.androidadvance:topsnackbar:1.1.1'
+    }
+}
+

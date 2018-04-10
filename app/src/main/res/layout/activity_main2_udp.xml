@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2_udp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lxz.common.fourth.udp.UDPActivity">
+    <include layout="@layout/titlebar"></include>
+    <TextView
+        android:id="@+id/tv_udp"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_udp"
+        android:text="udp聊天室案例"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

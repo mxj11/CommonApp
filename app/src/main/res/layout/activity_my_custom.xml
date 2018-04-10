@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_my_custom"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lxz.common.second.customview.activity.MyCustomActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.lxz.common.second.customview.view.Customer
+                android:id="@+id/cus1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                custom:titleTextColor="@android:color/holo_purple"
+                android:padding="10dp"
+                custom:titleTextSize="16sp"></com.lxz.common.second.customview.view.Customer>
+            <com.lxz.common.second.customview.view.CustomImageView
+                android:id="@+id/cus2_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                custom:image="@mipmap/ic_launcher"
+                custom:imageScaleType="center"
+                custom:titleText="hello andorid ! "
+                custom:titleTextColor="#ff0000"
+                custom:titleTextSize="32sp" />
+            <com.lxz.common.second.customview.view.MeasureView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:background="@android:color/holo_purple"
+                />
+            <com.lxz.common.second.customview.view.CustomProgressBar
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                custom:firstColor="@android:color/holo_purple"
+                custom:secondColor="@android:color/holo_green_dark"
+                custom:circleWidth="15dp"
+                custom:speed="10"
+                android:layout_marginTop="20dp"
+                />
+            <com.lxz.common.second.customview.view.CustomVolumControlBar
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="20dp"
+                custom:bg="@mipmap/ic_launcher"
+                custom:circleWidth="10dp"
+                custom:dotCount="8"
+                custom:firstColor="#ADC6E5"
+                custom:secondColor="#0362DB"
+                custom:splitSize="25" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

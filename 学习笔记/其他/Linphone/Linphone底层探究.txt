@@ -1,0 +1,15 @@
+1¡¢µÇÂ½
+java²ã£º
+1)LinphoneAddressImpl£ºprivate native long newLinphoneAddressImpl(String uri,String displayName);
+C²ã£º
+2)linphonecore_jni.cc£º
+extern "C" jlong Java_org_linphone_core_LinphoneAddressImpl_newLinphoneAddressImpl(JNIEnv*  env
+																					,jobject  thiz
+																					,jstring juri
+																					,jstring jdisplayName) {}
+3)address.c£º
+LinphoneAddress * linphone_address_new(const char *addr){}
+4)sal_address_impl.c£º(µ÷ÓÃbelle-sip¿â)
+SalAddress * sal_address_new(const char *uri){}	
+
+																				

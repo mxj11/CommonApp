@@ -1,0 +1,14 @@
+1、LinphoneLauncherActivity：Linphone软件启动时的第一个界面
+主要功能：启动LinphoneService。
+2、LinphoneService：Linphone的后台服务。
+主要功能：
+一：LinphoneManager类的初始化
+二：LinphonePreferences参数的设置。（LinphonePreferences是Linphone的参数设置类）
+三：设备信息及Linphone安装信息的存储。
+四：Linphone注册状态的更新及保持注册状态
+五：监听来电状态。
+3、LinphoneManager：Linphone管理器
+
+
+
+
